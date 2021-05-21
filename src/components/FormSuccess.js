@@ -1,12 +1,13 @@
 import React from 'react';
+import './Form.css';
 
-function FormSuccess() {
+const FormSuccess = () => {
   return (
     <div className='form-content-right'>
-      <div className='form-success'>We have recieved your request</div>
-      <img src='img/img-3.svg' alt='success-image' className='form-img-2' />
+      <h1 className='form-success'>We have received your request!</h1>
+      <img className='form-img-2' src='img/img-3.svg' alt='success-image' />
     </div>
   );
-}
+};
 
 export default FormSuccess;
