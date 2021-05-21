@@ -1,9 +1,12 @@
 import React from 'react';
+import useForm from './useForm';
 
 const FormSignup = () => {
+  const { handleChange, values, handleSubmit } = useForm();
+
   return (
     <div className='form-content-right'>
-      <form className='form'>
+      <form className='form' onSubmit={handleSubmit}>
         <h1>
           Get started with us today! Create your account by filling out the
           information below.
@@ -15,6 +18,8 @@ const FormSignup = () => {
             className='form-input'
             name='username'
             placeholder='Enter your username'
+            value={values.username}
+            onChange={handleChange}
           />
         </div>
         <div className='form-inputs'>
@@ -24,6 +29,8 @@ const FormSignup = () => {
             className='form-input'
             name='email'
             placeholder='Enter your email'
+            value={values.email}
+            onChange={handleChange}
           />
         </div>
         <div className='form-inputs'>
@@ -33,15 +40,19 @@ const FormSignup = () => {
             className='form-input'
             name='password'
             placeholder='Enter your password'
+            value={values.password}
+            onChange={handleChange}
           />
         </div>
         <div className='form-inputs'>
           <label className='form-label'>Confirm Password</label>
           <input
-            type='password2'
+            type='password'
             className='form-input'
             name='password2'
             placeholder='Enter your password2'
+            value={values.password2}
+            onChange={handleChange}
           />
         </div>
         <button className='form-input-btn' type='submit'>
